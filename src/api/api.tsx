@@ -1,4 +1,3 @@
-import exp from 'constants';
 import env from '../env';
 
 interface UserInfo {
@@ -50,4 +49,4 @@ function get_user_info(name: string): Promise<Response> {
 }
 
 export default get_user_info;
-export type{ UserInfo };
+export type { UserInfo };

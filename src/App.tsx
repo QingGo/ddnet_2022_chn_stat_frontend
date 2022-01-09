@@ -1,5 +1,5 @@
 import React from 'react';
-import './App.css';
+import './App.scss';
 import get_user_info from './api/api';
 import type { UserInfo } from './api/api';
 import StartPage from './pages/start';
