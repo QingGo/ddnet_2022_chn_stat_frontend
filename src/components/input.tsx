@@ -1,5 +1,5 @@
 import React from 'react';
-
+import './input.scss';
 interface InputBoxProps {
     onClick: (value: string) => void;
 }
@@ -16,9 +16,6 @@ class InputBox extends React.Component<InputBoxProps, InputBoxState> {
         }
     }
 
-    onClick = () => {
-        this.props.onClick(this.state.inputValue);
-    }
 
     handleChange = (e: React.ChangeEvent<HTMLTextAreaElement | HTMLInputElement>) => {
         this.setState({ inputValue: e.target.value });
@@ -26,9 +23,10 @@ class InputBox extends React.Component<InputBoxProps, InputBoxState> {
 
     render() {
         return (
-            <div>
+            <div className="input">
+                <h2>请输入游戏 ID：</h2>
                 <input type="text" onChange={this.handleChange} />
-                <button onClick={this.onClick}>查看</button>
+                <button onClick={() => {this.props.onClick(this.state.inputValue)}}>查看</button>
             </div>
         );
     }

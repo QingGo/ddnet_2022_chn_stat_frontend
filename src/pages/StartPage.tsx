@@ -1,8 +1,9 @@
 import React from 'react';
 import InputBox from '../components/input';
+import Page, { PageProps } from './Page';
 
 
-interface StartPageProps {
+interface StartPageProps extends PageProps {
     onClick: (value: string) => void;
 }
 
@@ -10,7 +11,9 @@ interface StartPageProps {
 class StartPage extends React.Component<StartPageProps> {
     render() {
         return (
-            <InputBox onClick={this.props.onClick}></InputBox>
+            <Page is_active={this.props.is_active}>
+                <InputBox onClick={this.props.onClick}></InputBox>
+            </Page>
         );
     }
 }
