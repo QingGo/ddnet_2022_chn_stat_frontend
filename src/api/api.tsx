@@ -1,4 +1,3 @@
-import env from '../env';
 
 interface UserInfo {
     Name: string,
@@ -45,7 +44,11 @@ interface UserInfo {
 
 
 function get_user_info(name: string): Promise<Response> {
-    return fetch(env.apiUrl + '/user/' + name)
+    return fetch('/user/' + name, {
+        headers: {
+            'Accept': 'application/json',
+        }
+    })
 }
 
 export default get_user_info;
