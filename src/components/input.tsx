@@ -1,5 +1,6 @@
 import React from 'react';
 import './input.scss';
+import { Button, Input, Form } from 'antd';
 interface InputBoxProps {
     onClick: (value: string) => void;
 }
@@ -25,8 +26,11 @@ class InputBox extends React.Component<InputBoxProps, InputBoxState> {
         return (
             <div className="input">
                 <h2>请输入游戏 ID：</h2>
-                <input type="text" onChange={this.handleChange} />
-                <button onClick={() => {this.props.onClick(this.state.inputValue)}}>查看</button>
+                <Form>
+                    <Input type="text" onChange={this.handleChange} />
+                    <Button htmlType="submit" onClick={() => { this.props.onClick(this.state.inputValue) }}>查看</Button>
+                </Form>
+
             </div>
         );
     }

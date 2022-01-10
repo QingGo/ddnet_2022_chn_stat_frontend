@@ -4,11 +4,11 @@ import get_user_info from './api/api';
 import type { UserInfo } from './api/api';
 import StartPage from './pages/StartPage';
 import BaseInfoPage from './pages/BaseInfoPage';
+import { message } from 'antd';
 
 
 interface AppState {
   active_card_index: number;
-  is_not_found: boolean;
   use_name: string;
   user_info: UserInfo,
 }
@@ -18,7 +18,6 @@ class App extends React.Component<any, AppState> {
     super(props);
     this.state = {
       active_card_index: 0,
-      is_not_found: false,
       use_name: '',
       user_info: {
         Name: '',
@@ -67,15 +66,12 @@ class App extends React.Component<any, AppState> {
   set_uers_info = async (user_name: string) => {
     var user_info_json = await get_user_info(user_name);
     if (user_info_json == null) {
-      this.setState({
-        is_not_found: true,
-      });
+      message.warning("未找到此玩家", 1);
     } else {
       this.setState({
         use_name: user_name,
         user_info: user_info_json,
         active_card_index: 1,
-        is_not_found: false,
       });
     }
   }
@@ -87,7 +83,6 @@ class App extends React.Component<any, AppState> {
   render() {
     return (
       <div className='App'>
-        {this.state.is_not_found && <h3>未找到此玩家</h3>}
         <StartPage onClick={this.set_uers_info}
           is_active={this.state.active_card_index === 0}></StartPage>
         <BaseInfoPage user_info={this.state.user_info}
