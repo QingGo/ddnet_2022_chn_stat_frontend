@@ -43,12 +43,14 @@ interface UserInfo {
 
 
 
-function get_user_info(name: string): Promise<Response> {
-    return fetch('/user/' + name, {
+async function get_user_info(name: string): Promise<UserInfo> {
+    var response = await fetch('/user/' + name, {
         headers: {
             'Accept': 'application/json',
         }
-    })
+    });
+    var user_info_json = await response.json();
+    return user_info_json;
 }
 
 export default get_user_info;

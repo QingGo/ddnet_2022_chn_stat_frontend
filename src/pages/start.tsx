@@ -8,10 +8,6 @@ interface StartPageProps {
 
 
 class StartPage extends React.Component<StartPageProps> {
-    // constructor(props: any) {
-    //     super(props);
-    // }
-
     render() {
         return (
             <InputBox onClick={this.props.onClick}></InputBox>

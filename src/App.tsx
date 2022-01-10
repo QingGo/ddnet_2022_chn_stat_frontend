@@ -59,15 +59,12 @@ class App extends React.Component<any, AppState> {
       },
     }
   }
-  set_uers_info = (user_name: string) => {
-    get_user_info(user_name).then(res => res.json()).then(result => {
-      this.setState({
-        use_name: user_name,
-        user_info: result,
-      });
-    }).catch(err => {
-      console.log(err)
-    })
+  set_uers_info = async (user_name: string) => {
+    var user_info_json = await get_user_info(user_name);
+    this.setState({
+      use_name: user_name,
+      user_info: user_info_json,
+    });
   }
 
   render() {

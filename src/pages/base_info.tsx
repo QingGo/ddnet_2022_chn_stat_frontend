@@ -7,10 +7,6 @@ interface BaseInfoProps {
 
 
 class BaseInfoPage extends React.Component<BaseInfoProps> {
-    // constructor(props: any) {
-    //     super(props);
-    // }
-
     render() {
         return <div>{JSON.stringify(this.props.user_info)}</div>
     }
