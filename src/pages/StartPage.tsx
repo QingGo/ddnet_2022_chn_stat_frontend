@@ -11,7 +11,9 @@ interface StartPageProps extends PageProps {
 class StartPage extends React.Component<StartPageProps> {
     render() {
         return (
-            <Page is_active={this.props.is_active}>
+            <Page is_active={this.props.is_active}
+                next_page={this.props.next_page}
+                previous_page={this.props.previous_page}>
                 <InputBox onClick={this.props.onClick}></InputBox>
             </Page>
         );

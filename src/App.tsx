@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.scss';
-import get_user_info from './api/api';
-import type { UserInfo } from './api/api';
+import get_user_info from './utils/api';
+import type { UserInfo } from './utils/api';
 import StartPage from './pages/StartPage';
 import BaseInfoPage from './pages/BaseInfoPage';
 import { message } from 'antd';
@@ -76,16 +76,31 @@ class App extends React.Component<any, AppState> {
     }
   }
 
-  // onClick = (e: any) => {
-  //   console.log(e);
-  // }
+  next_page = () => {
+    if (this.state.use_name == "" && this.state.active_card_index == 0) {
+      return
+    }
+    this.setState({
+      active_card_index: Math.min(this.state.active_card_index + 1, 1),
+    });
+  }
+
+  previous_page = () => {
+    this.setState({
+      active_card_index: Math.max(this.state.active_card_index - 1, 0),
+    });
+  }
 
   render() {
     return (
       <div className='App'>
         <StartPage onClick={this.set_uers_info}
+          next_page={this.next_page}
+          previous_page={this.previous_page}
           is_active={this.state.active_card_index === 0}></StartPage>
         <BaseInfoPage user_info={this.state.user_info}
+          next_page={this.next_page}
+          previous_page={this.previous_page}
           is_active={this.state.active_card_index === 1}></BaseInfoPage>
       </div>
     );

@@ -1,5 +1,4 @@
 import React from 'react';
-import './input.scss';
 import { Button, Input, Form } from 'antd';
 interface InputBoxProps {
     onClick: (value: string) => void;
