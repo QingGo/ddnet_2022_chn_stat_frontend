@@ -3,7 +3,7 @@ import './App.scss';
 import get_user_info from './utils/api';
 import type { UserInfo } from './utils/api';
 import StartPage from './pages/StartPage';
-import BaseInfoPage from './pages/cards/BaseInfoPage';
+import Card1 from './pages/cards/Card1';
 import Viewpager from './pages/Viewpager';
 import { message } from 'antd';
 

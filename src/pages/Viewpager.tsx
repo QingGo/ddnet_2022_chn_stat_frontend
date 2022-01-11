@@ -5,16 +5,17 @@ import { useDrag } from 'react-use-gesture'
 import clamp from 'lodash.clamp'
 import { UserInfo } from '../utils/api';
 
-import BaseInfoPage from './cards/BaseInfoPage';
-import BaseInfoPage2 from './cards//BaseInfoPage2';
-import BaseInfoPage3 from './cards/BaseInfoPage3';
+import Card1 from './cards/Card1';
+import Card2 from './cards/Card2';
+import Card3 from './cards/Card3';
+
 
 import styles from './styles.module.scss'
 
 const pages = [
-    (user_info: UserInfo) => React.createElement(BaseInfoPage, user_info),
-    (user_info: UserInfo) => React.createElement(BaseInfoPage2, user_info),
-    (user_info: UserInfo) => React.createElement(BaseInfoPage3, user_info),
+    (user_info: UserInfo) => React.createElement(Card1, user_info),
+    (user_info: UserInfo) => React.createElement(Card2, user_info),
+    (user_info: UserInfo) => React.createElement(Card3, user_info),
 ]
 
 interface ViewpagerProps {
