@@ -1,6 +1,6 @@
 import React from 'react';
 import InputBox from '../components/input';
-import Page, { PageProps } from './Page';
+import BasePage, { PageProps } from './BasePage';
 
 
 interface StartPageProps extends PageProps {
@@ -11,11 +11,9 @@ interface StartPageProps extends PageProps {
 class StartPage extends React.Component<StartPageProps> {
     render() {
         return (
-            <Page is_active={this.props.is_active}
-                next_page={this.props.next_page}
-                previous_page={this.props.previous_page}>
+            <BasePage is_active={this.props.is_active}>
                 <InputBox onClick={this.props.onClick}></InputBox>
-            </Page>
+            </BasePage>
         );
     }
 }
