@@ -65,16 +65,21 @@ class App extends React.Component<any, AppState> {
   }
 
   set_uers_info = async (user_name: string) => {
+    if (user_name === '') {
+      message.error('用户名不能为空');
+      return;
+    }
     var user_info_json = await get_user_info(user_name);
     if (user_info_json == null) {
       message.warning("未找到此玩家", 1);
-    } else {
-      this.setState({
-        use_name: user_name,
-        user_info: user_info_json,
-        active_card_index: 1,
-      });
+      return
     }
+    this.setState({
+      use_name: user_name,
+      user_info: user_info_json,
+      active_card_index: 1,
+    });
+
   }
 
 
