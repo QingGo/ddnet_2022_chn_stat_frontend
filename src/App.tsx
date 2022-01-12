@@ -4,7 +4,7 @@ import get_user_info, { UserInfo } from './utils/api';
 import useCheckMobileScreen from './utils/useCheckMobileScreen';
 import StartPage from './pages/StartPage';
 import Viewpager from './pages/Viewpager';
-import { message } from 'antd';
+import { message, notification } from 'antd';
 import BGMPlayer from './components/BGMPlayer';
 import classNames from 'classnames';
 
@@ -76,6 +76,13 @@ function App() {
       user_info: user_info_json,
       active_card_index: 1,
     });
+
+    notification.info({
+      message: `下拉查看更多数据`,
+      placement: "bottomRight",
+      duration: 3,
+    });
+
   }
   var class_name = classNames({
     "App": !useCheckMobileScreen(),
