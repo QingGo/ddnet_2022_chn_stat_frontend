@@ -29,7 +29,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build": "PUBLIC_URL=https://cdn-1257258189.cos.ap-shanghai.myqcloud.com/build react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },

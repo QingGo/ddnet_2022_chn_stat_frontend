@@ -16,7 +16,6 @@ class InputBox extends React.Component<InputBoxProps, InputBoxState> {
         }
     }
 
-
     handleChange = (e: React.ChangeEvent<HTMLTextAreaElement | HTMLInputElement>) => {
         this.setState({ inputValue: e.target.value });
     };

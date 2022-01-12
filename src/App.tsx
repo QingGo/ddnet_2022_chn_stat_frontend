@@ -1,11 +1,10 @@
 import React from 'react';
 import './App.scss';
-import get_user_info from './utils/api';
-import type { UserInfo } from './utils/api';
+import get_user_info, { UserInfo } from './utils/api';
 import StartPage from './pages/StartPage';
-import Card1 from './pages/cards/Card1';
 import Viewpager from './pages/Viewpager';
 import { message } from 'antd';
+import BGMPlayer from './components/BGMPlayer';
 
 
 interface AppState {
@@ -90,6 +89,7 @@ class App extends React.Component<any, AppState> {
         <StartPage onClick={this.set_uers_info}
           is_active={this.state.active_card_index === 0}></StartPage>
         <Viewpager user_info={this.state.user_info}></Viewpager>
+        <BGMPlayer></BGMPlayer>
       </div >
     );
   }

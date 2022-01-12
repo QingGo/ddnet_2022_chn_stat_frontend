@@ -1,5 +1,5 @@
 import React from 'react';
-import InputBox from '../components/input';
+import InputBox from '../components/InputBox';
 import BasePage, { PageProps } from './BasePage';
 
 
