@@ -46,7 +46,7 @@ interface UserInfo {
 
 
 async function get_user_info(name: string): Promise<UserInfo> {
-    var response = await fetch('/user/' + name, {
+    var response = await fetch('/user/' + encodeURIComponent(name), {
         headers: {
             'Accept': 'application/json',
         }
