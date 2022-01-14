@@ -41,6 +41,10 @@ interface UserInfo {
     most_finished_map_2021_spend_minues: string,
     day_latest_finish_time: string,
     day_latest_finish_map: string,
+    most_finish_hour: string,
+    most_finish_hour_count: string,
+    most_finish_weekday: string,
+    most_finish_weekday_count: string
 }
 
 
