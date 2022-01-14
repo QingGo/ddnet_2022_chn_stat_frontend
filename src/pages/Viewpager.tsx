@@ -8,6 +8,7 @@ import { UserInfo } from '../utils/api';
 import Card1 from './cards/Card1';
 import Card2 from './cards/Card2';
 import Card3 from './cards/Card3';
+import Card4 from './cards/Card4';
 
 
 import styles from './styles.module.scss'
@@ -16,6 +17,7 @@ const pages = [
     (user_info?: UserInfo) => React.createElement(Card1, user_info),
     (user_info?: UserInfo) => React.createElement(Card2, user_info),
     (user_info?: UserInfo) => React.createElement(Card3, user_info),
+    (user_info?: UserInfo) => React.createElement(Card4, user_info),
 ]
 
 interface ViewpagerProps {
