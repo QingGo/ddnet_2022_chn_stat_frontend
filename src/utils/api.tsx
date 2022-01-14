@@ -39,6 +39,8 @@ interface UserInfo {
     most_finished_map_2021: string,
     map_finished_count: string,
     most_finished_map_2021_spend_minues: string,
+    day_latest_finish_time: string,
+    day_latest_finish_map: string,
 }
 
 

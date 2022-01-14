@@ -13,13 +13,13 @@ import Card3 from './cards/Card3';
 import styles from './styles.module.scss'
 
 const pages = [
-    (user_info: UserInfo) => React.createElement(Card1, user_info),
-    (user_info: UserInfo) => React.createElement(Card2, user_info),
-    (user_info: UserInfo) => React.createElement(Card3, user_info),
+    (user_info?: UserInfo) => React.createElement(Card1, user_info),
+    (user_info?: UserInfo) => React.createElement(Card2, user_info),
+    (user_info?: UserInfo) => React.createElement(Card3, user_info),
 ]
 
 interface ViewpagerProps {
-    user_info: UserInfo,
+    user_info?: UserInfo,
 }
 
 function Viewpager(_props: ViewpagerProps) {
