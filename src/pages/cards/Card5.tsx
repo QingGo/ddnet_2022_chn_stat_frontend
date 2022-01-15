@@ -1,5 +1,6 @@
 import React from 'react';
 import { UserInfo } from '@/utils/api';
+import ReactMarkdown from 'react-markdown'
 
 type StringToString = {
     [name: string]: string
@@ -35,14 +36,16 @@ class Card5 extends React.Component<UserInfo> {
             hour_desc = "游戏时间很规律！"
         }
         var content = `2021 年中，
-            你最常在${weekday_map[this.props.most_finish_weekday]}过图,
-            共过图 ${this.props.most_finish_weekday_count} 次。
-            ${weekday_desc}
-            你在最常过图的时间段是 ${this.props.most_finish_hour} 点，
-            共过图 ${this.props.most_finish_hour_count} 次。
-            ${hour_desc}`;
+            你最常在 **${weekday_map[this.props.most_finish_weekday]}** 过图,
+            共过图 **${this.props.most_finish_weekday_count}** 次。
+            **${weekday_desc}**
+            你在最常过图的时间段是 **${this.props.most_finish_hour}** 点，
+            共过图 **${this.props.most_finish_hour_count}** 次。
+            **${hour_desc}**`;
 
-        return <div className={"page-card page-card-active"}>{content}</div>
+        return <div className={"page-card page-card-active card"}>
+            <ReactMarkdown>{content}</ReactMarkdown>
+        </div>
     }
 }
 

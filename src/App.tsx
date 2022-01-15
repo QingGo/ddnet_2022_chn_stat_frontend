@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import './App.scss';
 import get_user_info, { UserInfo } from './utils/api';
 import useCheckMobileScreen from './utils/useCheckMobileScreen';
