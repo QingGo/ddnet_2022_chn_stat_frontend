@@ -10,16 +10,16 @@ type StringToString = {
 class Card5 extends React.Component<UserInfo> {
     render() {
         var weekday_map: StringToString = {
-            '0': '星期日',
-            '1': '星期一',
-            '2': '星期二',
-            '3': '星期三',
-            '4': '星期四',
-            '5': '星期五',
-            '6': '星期六',
+            '1': '星期日',
+            '2': '星期一',
+            '3': '星期二',
+            '4': '星期三',
+            '5': '星期四',
+            '6': '星期五',
+            '7': '星期六',
         }
         var weekday_desc: string
-        if (['5', '6', '0'].includes(this.props.most_finish_weekday)) {
+        if (['6', '7', '1'].includes(this.props.most_finish_weekday)) {
             weekday_desc = "休息日玩游戏也要适度哦～"
         } else {
             weekday_desc = "该死，这人不用上班的吗？"
