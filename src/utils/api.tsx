@@ -45,6 +45,7 @@ interface UserInfo {
     most_finish_hour_count: string,
     most_finish_weekday: string,
     most_finish_weekday_count: string
+    days_count_has_records_2021: string
 }
 
 
