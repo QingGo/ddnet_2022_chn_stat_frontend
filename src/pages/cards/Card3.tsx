@@ -4,10 +4,16 @@ import ReactMarkdown from 'react-markdown'
 
 class Card3 extends React.Component<UserInfo> {
     render() {
-        var content = `2021 年你完成次数最多的地图是 **${this.props.most_finished_map_2021}**，
-            一共完成了 **${this.props.map_finished_count}** 次，
-            过图总耗时 **${parseFloat(this.props.most_finished_map_2021_spend_minues).toFixed(2)}** 分钟，
-            你一定很喜欢这张地图吧。`;
+        var content = `**${this.props.finish_map_count}** 次过图记录中，
+            不重复的地图数有 **${this.props.finish_distinct_map_count}** 张，
+            **其中:**
+            新过了 ${this.props.finish_novice_new_map_count} 张 Novice 地图，
+            新过了 ${this.props.finish_moderate_new_map_count} 张 Moderate 地图，
+            新过了 ${this.props.finish_brutal_new_map_count} 张 Brutal 地图，
+            新过了 ${this.props.finish_insane_new_map_count} 张 Insane 地图，
+            新过了 ${this.props.finish_solo_new_map_count} 张 Solo 地图，
+            新过了 ${this.props.finish_ddmax_new_map_count} 张 DDMax 地图，
+            你一定是个大佬吧。`;
         return <div className={"page-card page-card-active card"}>
             <ReactMarkdown>{content}</ReactMarkdown>
         </div>

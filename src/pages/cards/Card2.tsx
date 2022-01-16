@@ -1,19 +1,27 @@
 import React from 'react';
-import { UserInfo } from '@/utils/api';
+import { UserInfo } from '../../utils/api';
+import './card.scss'
 import ReactMarkdown from 'react-markdown'
+
 
 class Card2 extends React.Component<UserInfo> {
     render() {
-        var content = `**${this.props.finish_map_count}** 次过图记录中，
-            不重复的地图数有 **${this.props.finish_distinct_map_count}** 张，
-            **其中:**
-            新过了 ${this.props.finish_novice_new_map_count} 张 Novice 地图，
-            新过了 ${this.props.finish_moderate_new_map_count} 张 Moderate 地图，
-            新过了 ${this.props.finish_brutal_new_map_count} 张 Brutal 地图，
-            新过了 ${this.props.finish_insane_new_map_count} 张 Insane 地图，
-            新过了 ${this.props.finish_solo_new_map_count} 张 Solo 地图，
-            新过了 ${this.props.finish_ddmax_new_map_count} 张 DDMax 地图，
-            你一定是个大佬吧。`;
+        var finish_time_over_percent = Math.floor((this.props.player_count_2021 - this.props.finish_time_sum_hours + 1)
+            * 1000000 / this.props.player_count_2021) / 10000;
+        var finish_time_over_percent_summary: string;
+        if (finish_time_over_percent > 90) {
+            finish_time_over_percent_summary = "你的肝还好吗？"
+        } else if (finish_time_over_percent > 60) {
+            finish_time_over_percent_summary = "你已经是个重度玩家了～"
+        } else {
+            finish_time_over_percent_summary = "所以都说 DDNet 是个休闲游戏了～"
+        }
+        var finish_time_hours_rounded = Number(this.props.finish_time_sum_hours).toFixed(2);
+
+        var content = `在 **2021** 年，
+                你在过图上一共消耗了 **${finish_time_hours_rounded}** 小时，
+                超越了 **${finish_time_over_percent}%** 的玩家。
+                **${finish_time_over_percent_summary}**`;
         return <div className={"page-card page-card-active card"}>
             <ReactMarkdown>{content}</ReactMarkdown>
         </div>

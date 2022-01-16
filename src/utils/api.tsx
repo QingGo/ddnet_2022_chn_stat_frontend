@@ -2,7 +2,7 @@
 interface UserInfo {
     Name: string,
     total_points_earned: string,
-    finish_time_sum_hours: string,
+    finish_time_sum_hours: number,
     finish_distinct_map_count: string,
     finish_map_count: string,
     finish_points_total: string,
@@ -45,7 +45,10 @@ interface UserInfo {
     most_finish_hour_count: string,
     most_finish_weekday: string,
     most_finish_weekday_count: string
-    days_count_has_records_2021: string
+    days_count_has_records_2021: string,
+    player_count_2021: number,
+    total_points_earned_rank: number,
+    finish_time_sum_hours_rank: number,
 }
 
 

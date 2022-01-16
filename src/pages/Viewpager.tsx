@@ -10,6 +10,7 @@ import Card2 from './cards/Card2';
 import Card3 from './cards/Card3';
 import Card4 from './cards/Card4';
 import Card5 from './cards/Card5';
+import Card6 from './cards/Card6';
 
 
 import styles from './styles.module.scss'
@@ -20,6 +21,7 @@ const pages = [
     (user_info?: UserInfo) => React.createElement(Card3, user_info),
     (user_info?: UserInfo) => React.createElement(Card4, user_info),
     (user_info?: UserInfo) => React.createElement(Card5, user_info),
+    (user_info?: UserInfo) => React.createElement(Card6, user_info),
 ]
 
 interface ViewpagerProps {
@@ -60,10 +62,14 @@ function Viewpager(_props: ViewpagerProps) {
 }
 
 export default function App(_props: ViewpagerProps) {
+    var inner_component: JSX.Element = <div>loading...</div>
+    if (_props.user_info !== undefined) {
+        inner_component = <Viewpager user_info={_props.user_info} />
+    }
     return (
         // 不然拖拽区域不够大
         <div className={"page-card"}>
-            <Viewpager user_info={_props.user_info} />
+            {inner_component}
         </div>
     )
 }
