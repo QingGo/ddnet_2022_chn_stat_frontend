@@ -37,7 +37,7 @@
     "build": "PUBLIC_URL=https://cdn-1257258189.cos.ap-shanghai.myqcloud.com/build react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "upload": "coscmd upload -r build / && scp -r ./build/index.html zeng@49.232.3.102:~/ddnet_2022_chn_stat_deploy/build/"
+    "upload": "coscmd upload -r build / && scp -r ./build/index.html ./build/favicon.ico zeng@49.232.3.102:~/ddnet_2022_chn_stat_deploy/build/"
   },
   "eslintConfig": {
     "extends": [

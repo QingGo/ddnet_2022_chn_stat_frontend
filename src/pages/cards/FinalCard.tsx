@@ -45,11 +45,7 @@ function FinalCard(props: UserInfo) {
         </Button>
     </div>
     if (useCheckMobileScreen()) {
-        var share_component = <div>
-            <Button type="primary" size="large" htmlType="submit"
-                value="qqFriend" onClick={onClick}>
-                分享到 QQ
-            </Button>
+        share_component = <div>
             <Button type="primary" size="large" htmlType="submit"
                 value="qZone" onClick={onClick}>
                 分享到 QQ 空间
