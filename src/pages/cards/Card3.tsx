@@ -13,6 +13,7 @@ class Card3 extends React.Component<UserInfo> {
             新过了 ${this.props.finish_insane_new_map_count} 张 Insane 地图，
             新过了 ${this.props.finish_solo_new_map_count} 张 Solo 地图，
             新过了 ${this.props.finish_ddmax_new_map_count} 张 DDMax 地图，
+            新过了 ${this.props.finish_race_map_count} 张 Race 地图，
             你一定是个大佬吧。`;
         return <div className={"page-card page-card-active card"}>
             <ReactMarkdown>{content}</ReactMarkdown>
