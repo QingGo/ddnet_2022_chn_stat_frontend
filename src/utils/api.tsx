@@ -49,6 +49,10 @@ interface UserInfo {
     player_count_2021: number,
     total_points_earned_rank: number,
     finish_time_sum_hours_rank: number,
+    team_count: number,
+    teammate_count: number,
+    favorite_teammate: string,
+    favorite_teammate_team_count: string,
 }
 
 

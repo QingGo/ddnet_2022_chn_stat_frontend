@@ -11,6 +11,7 @@ import Card3 from './cards/Card3';
 import Card4 from './cards/Card4';
 import Card5 from './cards/Card5';
 import Card6 from './cards/Card6';
+import Card7 from './cards/Card7';
 import FinalCard from './cards/FinalCard';
 
 
@@ -23,6 +24,7 @@ const pages = [
     (user_info?: UserInfo) => React.createElement(Card4, user_info),
     (user_info?: UserInfo) => React.createElement(Card5, user_info),
     (user_info?: UserInfo) => React.createElement(Card6, user_info),
+    (user_info?: UserInfo) => React.createElement(Card7, user_info),
     (user_info?: UserInfo) => React.createElement(FinalCard, user_info),
 ]
 
