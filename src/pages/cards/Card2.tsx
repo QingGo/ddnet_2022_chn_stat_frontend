@@ -6,7 +6,7 @@ import ReactMarkdown from 'react-markdown'
 
 class Card2 extends React.Component<UserInfo> {
     render() {
-        var finish_time_over_percent = Math.floor((this.props.player_count_2021 - this.props.finish_time_sum_hours + 1)
+        var finish_time_over_percent = Math.floor((this.props.player_count_2021 - this.props.finish_time_sum_hours_rank + 1)
             * 1000000 / this.props.player_count_2021) / 10000;
         var finish_time_over_percent_summary: string;
         if (finish_time_over_percent > 99) {
