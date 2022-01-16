@@ -17,6 +17,7 @@
     "lodash-es": "4.17.15",
     "lodash-move": "1.1.1",
     "lodash.clamp": "4.0.3",
+    "nativeshare": "^2.1.5",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-markdown": "^7.1.2",
