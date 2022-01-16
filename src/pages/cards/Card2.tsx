@@ -9,9 +9,9 @@ class Card2 extends React.Component<UserInfo> {
         var finish_time_over_percent = Math.floor((this.props.player_count_2021 - this.props.finish_time_sum_hours + 1)
             * 1000000 / this.props.player_count_2021) / 10000;
         var finish_time_over_percent_summary: string;
-        if (finish_time_over_percent > 90) {
+        if (finish_time_over_percent > 99) {
             finish_time_over_percent_summary = "你的肝还好吗？"
-        } else if (finish_time_over_percent > 60) {
+        } else if (finish_time_over_percent > 90) {
             finish_time_over_percent_summary = "你已经是个重度玩家了～"
         } else {
             finish_time_over_percent_summary = "所以都说 DDNet 是个休闲游戏了～"
